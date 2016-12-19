@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'UXPasscodeField_Example' do
+  pod 'UXPasscodeField', :path => '../'
+
+  target 'UXPasscodeField_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
