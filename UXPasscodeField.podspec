@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'UXPasscodeField'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of UXPasscodeField.'
+  s.version          = '1.0.0'
+  s.summary          = 'UXPasscodeField is an input control for numeric code'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,25 +18,17 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+UXPasscodeField is designed for inputting numeric values. It can be used for inputting passcode, PIN, SMS-verification, etc.
                        DESC
 
   s.homepage         = 'https://github.com/<GITHUB_USERNAME>/UXPasscodeField'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Eddie Lau' => 'eddie@touchutility.com' }
-  s.source           = { :git => 'https://github.com/<GITHUB_USERNAME>/UXPasscodeField.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/eddy-lau/UXPasscodeField.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
-
   s.source_files = 'UXPasscodeField/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'UXPasscodeField' => ['UXPasscodeField/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end

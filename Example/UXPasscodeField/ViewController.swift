@@ -7,18 +7,22 @@
 //
 
 import UIKit
+import UXPasscodeField
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var passcodeField: UXPasscodeField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        passcodeField.becomeFirstResponder()
+        passcodeField.addTarget(self, action: #selector(ViewController.passcodeFieldDidChangeValue), for: .valueChanged)
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func passcodeFieldDidChangeValue() {
+        print(passcodeField.passcode)
     }
 
 }
-
