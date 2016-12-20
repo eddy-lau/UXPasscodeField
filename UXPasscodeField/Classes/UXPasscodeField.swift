@@ -8,14 +8,20 @@
 
 import UIKit
 
+@IBDesignable
 public class UXPasscodeField: UIControl, UIKeyInput {
 
     // MARK: - Public variables
-    public var numberOfDigits = 6 {
+    @IBInspectable public var numberOfDigits: Int = 6 {
         didSet {
             
             if oldValue != numberOfDigits {
-                passcode = ""
+                
+                if passcode.characters.count > numberOfDigits {
+                    let endOfString = passcode.index(passcode.startIndex, offsetBy: numberOfDigits)
+                    passcode = passcode.substring(to: endOfString)
+                }
+                
                 relayout()
                 redisplay()
             }
@@ -23,7 +29,7 @@ public class UXPasscodeField: UIControl, UIKeyInput {
         }
     }
     
-    public var passcode: String = "" {
+    @IBInspectable public var passcode: String = "" {
         didSet {
             
             if oldValue != passcode {
@@ -43,7 +49,7 @@ public class UXPasscodeField: UIControl, UIKeyInput {
         }
     }
     
-    public var spaceBetweenDigits = CGFloat(10.0) {
+    @IBInspectable public var spaceBetweenDigits: CGFloat = 10.0 {
         
         didSet {
             
@@ -57,7 +63,7 @@ public class UXPasscodeField: UIControl, UIKeyInput {
         
     }
     
-    public var dashColor = UIColor.gray {
+    @IBInspectable public var dashColor: UIColor = UIColor.gray {
         didSet {
             
             if oldValue != dashColor {
@@ -67,7 +73,7 @@ public class UXPasscodeField: UIControl, UIKeyInput {
         }
     }
     
-    public var textColor = UIColor.black {
+    @IBInspectable public var textColor: UIColor = UIColor.black {
         didSet {
             if oldValue != textColor {
                 redisplay()

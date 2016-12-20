@@ -9,10 +9,14 @@
 
 ![Screenshot](./Screenshot.gif)
 
-## Example
+## Example Project
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+
+## Sample Code
+
+### UXPasscodeField
 ```swift
 import UIKit
 import UXPasscodeField
@@ -45,8 +49,22 @@ class ViewController: UIViewController {
 
 }
 ```
+### UXPasscodeViewController
+```swift
+  let passcodeViewController = UXPasscodeViewController.instantiate()
+  passcodeViewController.message = "Hello iOS developer! Please input your 4-digit code here."
+  passcodeViewController.numberOfDigits = 4
+  passcodeViewController.done { passcode in
+
+      print(passcode)
+      _ = passcodeViewController.resignFirstResponder()
+
+  }
+```
 
 ## Requirements
+
+iOS 8 or above.
 
 ## Installation
 

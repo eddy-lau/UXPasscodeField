@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'UXPasscodeField'
-  s.version          = '1.1.2'
+  s.version          = '1.2.0'
   s.summary          = 'UXPasscodeField is an input control for numeric code'
 
 # This description is used to generate tags and improve search results.
@@ -26,9 +26,10 @@ UXPasscodeField is designed for inputting numeric values. It can be used for inp
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Eddie Lau' => 'eddie@touchutility.com' }
   s.source           = { :git => 'https://github.com/eddy-lau/UXPasscodeField.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.resource_bundle = { 'UXPasscodeField' => 'UXPasscodeField/Resources/*' }
+
 
   s.ios.deployment_target = '8.0'
   s.source_files = 'UXPasscodeField/Classes/**/*'
-  
+
 end
