@@ -13,6 +13,33 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+~~~~
+import UIKit
+import UXPasscodeField
+
+class ViewController: UIViewController {
+
+    @IBOutlet weak var passcodeField: UXPasscodeField!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        passcodeField.becomeFirstResponder()
+
+        // Optional, default is false
+        passcodeField.isSecureTextEntry = false
+
+        passcodeField.addTarget(self, action: #selector(ViewController.passcodeFieldDidChangeValue), for: .valueChanged)
+
+    }
+
+    @IBAction func passcodeFieldDidChangeValue() {
+        print(passcodeField.passcode)
+    }
+
+}
+~~~~
+
 ## Requirements
 
 ## Installation
