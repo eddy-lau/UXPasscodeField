@@ -78,6 +78,13 @@ public class UXPasscodeField: UIControl, UIKeyInput {
     // MARK: - Private variables
     private var numberLabels: [UILabel] = []
     private let emptyDigit = "–"
+    private var isSecure = false {
+        didSet {
+            if isSecure != oldValue {
+                redisplay()
+            }
+        }
+    }
     
     
     // MARK: - UIView
@@ -117,7 +124,7 @@ public class UXPasscodeField: UIControl, UIKeyInput {
         }
         numberLabels = []
         
-        for i in 0..<numberOfDigits {
+        for _ in 0..<numberOfDigits {
             let numberLabel = UILabel()
             numberLabel.text = emptyDigit
             numberLabel.textColor = dashColor
@@ -152,7 +159,7 @@ public class UXPasscodeField: UIControl, UIKeyInput {
                 let start = passcode.index(passcode.startIndex, offsetBy: i)
                 let end = passcode.index(start, offsetBy: 1)
                 let number = passcode.substring(with:start..<end)
-                label.text = number
+                label.text = isSecureTextEntry ? "●" : number
                 label.textColor = textColor
                 
             } else {
@@ -203,6 +210,15 @@ public class UXPasscodeField: UIControl, UIKeyInput {
         passcode = passcode.substring(to: passcode.index(before: passcode.endIndex))
     }
     
+    public var isSecureTextEntry: Bool {
+        @objc(isSecureTextEntry) get {
+            return isSecure
+        }
+        @objc(setSecureTextEntry:) set {
+            isSecure = newValue
+        }
+    }
+    
     // MARK: UIResponder
     public override var canBecomeFirstResponder: Bool {
         return true
@@ -210,8 +226,11 @@ public class UXPasscodeField: UIControl, UIKeyInput {
     
     // MARK: UIKeyboardTrait
     
-    public  var keyboardType: UIKeyboardType {
-        return .numberPad
+    public var keyboardType: UIKeyboardType {
+        set {}
+        get {
+            return .numberPad
+        }
     }
     
 

@@ -17,6 +17,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         passcodeField.becomeFirstResponder()
+
+        // Optional, default is false
+        passcodeField.isSecureTextEntry = false
+        
         passcodeField.addTarget(self, action: #selector(ViewController.passcodeFieldDidChangeValue), for: .valueChanged)
         
     }
