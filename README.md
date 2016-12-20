@@ -13,7 +13,7 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-~~~~
+```swift
 import UIKit
 import UXPasscodeField
 
@@ -38,7 +38,7 @@ class ViewController: UIViewController {
     }
 
 }
-~~~~
+```
 
 ## Requirements
 
