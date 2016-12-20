@@ -5,6 +5,10 @@
 [![License](https://img.shields.io/cocoapods/l/UXPasscodeField.svg?style=flat)](http://cocoapods.org/pods/UXPasscodeField)
 [![Platform](https://img.shields.io/cocoapods/p/UXPasscodeField.svg?style=flat)](http://cocoapods.org/pods/UXPasscodeField)
 
+## Screenshot
+
+![Screenshot](./Screenshot.gif)
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
