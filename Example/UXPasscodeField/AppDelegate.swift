@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import UXPasscodeField
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,21 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        let passcodeViewController = UXPasscodeViewController.instantiate()
-        passcodeViewController.title = "Passcode"
-        passcodeViewController.message = "Hello iOS developer! Please input your 4-digit code here."
-        passcodeViewController.numberOfDigits = 4
-        passcodeViewController.done { passcode in
-            
-            print(passcode)
-            _ = passcodeViewController.resignFirstResponder()
-            
-        }
-        
-        let navController = UINavigationController(rootViewController: passcodeViewController)
-        window?.rootViewController = navController
-        
         return true
     }
 
