@@ -26,10 +26,16 @@ class ViewController: UIViewController {
 
         passcodeField.becomeFirstResponder()
 
+        // Optional, default is 6
+        passcodeField.numberOfDigits = 6
+
         // Optional, default is false
         passcodeField.isSecureTextEntry = false
 
-        passcodeField.addTarget(self, action: #selector(ViewController.passcodeFieldDidChangeValue), for: .valueChanged)
+        passcodeField.addTarget(
+          self,
+          action: #selector(ViewController.passcodeFieldDidChangeValue),
+          for: .valueChanged)
 
     }
 
